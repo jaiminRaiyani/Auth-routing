@@ -5,18 +5,28 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [error, setError] = useState(null); // To handle login errors
 
-  // A mock function to validate user credentials
-  const login = (email, password) => {
-    const correctEmail = "test@example.com"; // Replace with actual validation logic
-    const correctPassword = "password123"; // Replace with actual validation logic
+  const login = async (email, password) => {
+    try {
+      const response = await fetch("http://localhost:5000/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
 
-    if (email === correctEmail && password === correctPassword) {
-      const userData = { email }; // Store user data
+      if (!response.ok) {
+        throw new Error("Invalid credentials");
+      }
+
+      const data = await response.json();
+      const userData = { email: data.email, token: data.token };
       setUser(userData); // Set user state
-      localStorage.setItem("user", JSON.stringify(userData)); // Optional: Store user in local storage
-    } else {
-      throw new Error("Invalid credentials"); // Throw error for invalid login
+      localStorage.setItem("user", JSON.stringify(userData)); // Store user in local storage
+    } catch (err) {
+      setError(err.message); // Set error message
     }
   };
 
@@ -30,7 +40,9 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, isAuthenticated }}>
+    <AuthContext.Provider
+      value={{ user, login, logout, isAuthenticated, error }}
+    >
       {children}
     </AuthContext.Provider>
   );
