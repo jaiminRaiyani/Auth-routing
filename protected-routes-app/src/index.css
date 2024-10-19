@@ -1,0 +1,65 @@
+/* index.css or style.css */
+
+/* Reset margin and padding for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Helps with consistent sizing */
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f9f9f9; /* Light background color */
+  color: #333; /* Dark text color */
+  line-height: 1.6; /* Improved line height for readability */
+}
+
+/* Centering and styling form elements */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the form */
+  padding: 20px; /* Add some padding */
+  background-color: #fff; /* White background for forms */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  max-width: 400px; /* Limit max width */
+  margin: 0 auto; /* Center form on page */
+}
+
+/* Styling input fields */
+input[type="email"],
+input[type="password"] {
+  width: 100%; /* Full width */
+  padding: 10px; /* Padding for comfort */
+  margin: 10px 0; /* Space between inputs */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 4px; /* Slightly rounded edges */
+  font-size: 16px; /* Larger text */
+}
+
+/* Button styling */
+button {
+  padding: 10px 20px; /* Comfortable button size */
+  background-color: #007bff; /* Primary button color */
+  color: #fff; /* Text color */
+  border: none; /* Remove default border */
+  border-radius: 4px; /* Rounded edges */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Additional styling for the dashboard */
+.dashboard {
+  padding: 20px; /* Add padding to dashboard */
+  text-align: center; /* Center text */
+}
