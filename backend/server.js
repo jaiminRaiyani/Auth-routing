@@ -1,7 +1,7 @@
 // server.js
 const express = require("express");
 const jwt = require("jsonwebtoken");
-const bcrypt = require("bcryptjs"); // Make sure to use 'bcryptjs'
+const bcrypt = require("bcryptjs");
 const cors = require("cors");
 require("dotenv").config(); // To use environment variables
 
