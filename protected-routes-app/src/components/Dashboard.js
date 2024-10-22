@@ -1,6 +1,6 @@
 import React from "react";
 import { useAuth } from "./AuthContext";
-import "../styles/Dashboard.css"; // Update this line
+import "../styles/Dashboard.css"; 
 
 const Dashboard = () => {
   const { logout } = useAuth();
