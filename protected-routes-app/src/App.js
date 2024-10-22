@@ -4,7 +4,7 @@ import Home from "./components/Home";
 import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
-import { AuthProvider } from "./components/AuthContext"; // Correctly import AuthProvider
+import { AuthProvider } from "./components/AuthContext"; 
 
 const App = () => {
   return (
@@ -29,4 +29,4 @@ const App = () => {
   );
 };
 
-export default App; // Ensure App is the default export
+export default App; 
