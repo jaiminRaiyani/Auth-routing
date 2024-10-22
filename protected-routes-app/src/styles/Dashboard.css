@@ -3,8 +3,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* Full viewport height */
-  background-color: #f0f4f8; /* Light background color */
+  height: 100vh; 
+  background-color: #f0f4f8; 
 }
 
 h1 {
@@ -17,7 +17,7 @@ h1 {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #ff4c4c; /* Red background */
+  background-color: #ff4c4c; 
   color: white;
   font-size: 16px;
   cursor: pointer;
@@ -25,5 +25,5 @@ h1 {
 }
 
 .btn:hover {
-  background-color: #e63939; /* Darker red on hover */
+  background-color: #e63939; 
 }
