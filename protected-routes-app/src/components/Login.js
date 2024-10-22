@@ -18,12 +18,12 @@ const Login = () => {
     setLoading(true);
 
     try {
-      await login(email, password); // If login is successful
+      await login(email, password); 
       setLoading(false);
-      navigate("/dashboard"); // Redirect to dashboard
+      navigate("/dashboard"); 
     } catch (err) {
       setLoading(false);
-      setError("Invalid credentials, please try again."); // Show error
+      setError("Invalid credentials, please try again."); 
     }
   };
 
