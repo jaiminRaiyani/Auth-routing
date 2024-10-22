@@ -1,11 +1,10 @@
-// AuthContext.js
 import React, { createContext, useContext, useState } from "react";
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [error, setError] = useState(null); // To handle login errors
+  const [error, setError] = useState(null); 
 
   const login = async (email, password) => {
     try {
@@ -23,10 +22,10 @@ export const AuthProvider = ({ children }) => {
 
       const data = await response.json();
       const userData = { email: data.email, token: data.token };
-      setUser(userData); // Set user state
-      localStorage.setItem("user", JSON.stringify(userData)); // Store user in local storage
+      setUser(userData); 
+      localStorage.setItem("user", JSON.stringify(userData)); 
     } catch (err) {
-      setError(err.message); // Set error message
+      setError(err.message); 
     }
   };
 
@@ -36,7 +35,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const isAuthenticated = () => {
-    return !!user; // Returns true if user is authenticated
+    return !!user; 
   };
 
   return (
