@@ -1,12 +1,11 @@
-// server.js
 const express = require("express");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const cors = require("cors");
-require("dotenv").config(); // To use environment variables
+require("dotenv").config(); 
 
 const app = express();
-const PORT = process.env.PORT || 5000; // Use PORT from environment variables
+const PORT = process.env.PORT || 5000; 
 
 // Middleware
 app.use(cors());
